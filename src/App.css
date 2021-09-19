@@ -1,0 +1,238 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@font-face {
+font-family: theBold;
+src: url(./theboldfont.ttf);
+}
+
+input{
+  border-radius: 23px;
+  border: none;
+  padding: 10px;
+}
+
+p{
+  margin: 2px;
+}
+
+.Home{
+  height: 100vh;
+  overflow: hidden;
+  font-family: "theBold"
+}
+
+.Panel{
+  position: absolute;
+  width: 100%;
+  color: white;
+}
+
+.Panel h1{
+  font-size: 4em;
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 200px;
+}
+
+.Login{
+  background-color: #0000006e;
+    padding: 10px 50px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+
+.divider{
+  width:5px;
+  height:auto;
+  display:inline-block;
+}
+
+.midnight-blue-flat-button {
+  font-family: thebold;
+  position: relative;
+  vertical-align: top;
+  width: 45%;
+  height: 50px;
+  padding: 0;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #2c3e50;
+  border: 0;
+  border-bottom: 2px solid #22303f;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #22303f;
+  box-shadow: inset 0 -2px #22303f;
+}
+.midnight-blue-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.Chat{
+  font-size: 0.9em;
+}
+.Chat .message-div{
+  padding: 0.3em;
+  padding-bottom: 1em;
+  margin: 0.5em 0.3em;
+  position: relative;
+  border-radius: 0.3em;
+  border: 1px solid black;
+}
+.Chat .message-div .date{
+  position: absolute;
+  display: inline-block;
+  font-size: 0.8em;
+  right: 1em;
+  bottom: 0.1em;
+}
+.boom-message-list{
+  display: table;
+  word-break: break-all;
+  color: #F7EB1D;
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  top: 0;
+  left: calc(50vw - 125px);
+  z-index: 9;
+}
+.boom-message-list>div{
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.boom-message{
+  width: 250px;
+  height: 150px;
+  background-size: 100% 100%;
+  padding: 5%;
+  display: table-cell;
+  vertical-align: middle;
+
+  animation-name: fadeIn;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-fill-mode: forwards;
+
+  -moz-animation-name: fadeIn;
+  -moz-animation-duration: 5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: alternate;
+  -moz-animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
+@-moz-keyframes fadeIn {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.terms {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.terms p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+.changed-atag{
+  color: white;
+  text-decoration: none;
+  -webkit-transition: color .3s;
+  -o-transition: color .3s;
+  transition: color .3s;
+}
+.terms a {
+  color: #444;
+  text-decoration: none;
+  -webkit-transition: color .3s;
+  -o-transition: color .3s;
+  transition: color .3s;
+}
+
+.terms ul {
+  font-size: 1rem;
+  list-style-type: disc;
+  line-height: 2;
+  margin-left: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 980px){
+  .terms h2 {
+    font-size: 1.65rem;
+  }
+}
+
+@media (min-width: 980px){
+  .terms h1 {
+    font-size: 2.125rem;
+  }
+}
+

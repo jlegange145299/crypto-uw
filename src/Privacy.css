@@ -1,0 +1,41 @@
+.privacy {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    text-align: left;
+}
+
+p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.privacy a {
+    color: #444;
+    text-decoration: none;
+    -webkit-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s;
+}
+
+.privacy ul {
+    font-size: 1rem;
+    list-style-type: disc;
+    line-height: 2;
+    margin-left: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 980px){
+    .privacy h2 {
+        font-size: 1.65rem;
+    }
+}
+
+@media (min-width: 980px){
+    .privacy h1 {
+        font-size: 2.125rem;
+    }
+}
