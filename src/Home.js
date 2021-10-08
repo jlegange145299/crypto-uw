@@ -513,9 +513,9 @@ class Home extends Component {
     ]
     return (
       <div className="Home">
-        <video onEnded={() => this.setState({ ended: true })} ref={this.state.ref} autoPlay muted>
-    <source src={movie} type='video/mp4' className={this.state.ended ? 'ended' : ''}/>
-    </video>
+        <video style={{ overflow: 'hidden'}} onEnded={() => this.setState({ ended: true })} autoPlay muted>
+        <source src={movie} type='video/mp4' className={this.state.ended ? 'ended' : ''}/>
+        </video>
         {this.state.boomMsgList.length > 0 &&
           <div className='boom-message-list'>
             <div>
@@ -535,11 +535,6 @@ class Home extends Component {
         }
         <div className="Panel" >
           <h1>CryptoPop</h1>
-          { !this.stateEnded && (
-          <video width="100px" height="100px" onEnded={() => this.setState({ ended: true})}>
-          <source src="sample.mp4" type="video/mp4" />
-            </video>
-          )}
 
           {this.state.currentUser == "" ? <Login login={this.login} register={this.register} /> : (this.state.gameStarted ? null : profilePanels[this.state.currentPanel])}
         </div>
