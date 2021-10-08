@@ -1,12 +1,8 @@
-html, body {margin: 0; height: 100%; overflow: hidden}
-
 .App {
   text-align: center;
   max-height: 100vh;
   width: 100vw;
-  overflow: hidden;
   font-family: "theBold";
-  overflow: hidden;
 }
 
 .App-logo {
@@ -54,11 +50,13 @@ p{
 }
 
 .Home{
+  margin: 0;
+  height: 100%;
   max-height: 100vh;
   width: 100vw;
   overflow: hidden;
   font-family: "theBold";
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .Panel{
