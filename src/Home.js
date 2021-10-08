@@ -14,6 +14,8 @@ import getRandomInt from './utils';
 import { getTimeString } from './utils';
 import serverURL from './constansts';
 import Web3 from 'web3'
+import movie from './movie.M4V';
+
 const socket = openSocket(serverURL);//, {transports: ['websocket', 'polling'], secure: false});
 
 
@@ -46,7 +48,8 @@ class Home extends Component {
       chatMessage: "",
       colorIndex: 0,
       boomMsgList: [ ],
-      isProcessing: false
+      isProcessing: false,
+      ended: false
     }
 
     this.login = this.login.bind(this)
@@ -510,6 +513,14 @@ class Home extends Component {
     ]
     return (
       <div className="Home">
+        {
+          !this.state.ended && (
+            <video style={{ overflow: 'hidden'}} onEnded={() => this.setState({ ended: true })} autoPlay muted>
+            <source src={movie} type='video/mp4' className={this.state.ended ? 'ended' : ''}/>
+            </video>
+          )
+        }
+
         {this.state.boomMsgList.length > 0 &&
           <div className='boom-message-list'>
             <div>
@@ -527,29 +538,35 @@ class Home extends Component {
             </div>
           </div>
         }
-        <div className="Panel">
+        <div className="Panel" >
           <h1>CryptoPop</h1>
+
           {this.state.currentUser == "" ? <Login login={this.login} register={this.register} /> : (this.state.gameStarted ? null : profilePanels[this.state.currentPanel])}
         </div>
         {
           this.state.gameStarted &&
           <Chat messageList={this.state.messageList} chatMessage={this.state.chatMessage} handleChat={this.handleMessageBox} sendMessage={this.sendMessage} colors={colors} />
         }
-        <GameScreen userCount={this.state.userCount} clickBalloon={this.clickBalloon} gameStarted={this.state.gameStarted} socket={socket}/>
-        <div style={{ position: "absolute", left: "20px", top: "90px", backgroundColor: "#00000052", borderRadius: "5px", margin: "10px", color: "white", padding: "5px" }}>
+        {
+          this.state.ended ? 
+          <GameScreen userCount={this.state.userCount} clickBalloon={this.clickBalloon} gameStarted={this.state.gameStarted} socket={socket}/>
+: null
+        }
+        <div style={{ position: "absolute", left: "20px", top: "90px", backgroundColor: "#00000052", borderRadius: "5px", margin: "10px", color: "white", padding: "5px", zIndex: 10000 }}>
           <h1>{this.state.userCount}</h1>
         Players</div>
-        <div style={{ position: "absolute", right: "35px", top: "90px", backgroundColor: "#00000052", borderRadius: "5px", margin: "10px", color: "white", padding: "5px" }}>
+        <div style={{ position: "absolute", right: "35px", top: "90px", backgroundColor: "#00000052", borderRadius: "5px", margin: "10px", color: "white", padding: "5px", zIndex: 10000 }}>
           Balance
         <h1>{this.state.balance + this.state.spent}</h1></div>
-        <div style={{ position: "absolute", right: "300px", top: "21px", borderRadius: "5px", margin: "10px", color: "white", padding: "5px" }}>
+        <div style={{ position: "absolute", right: "300px", top: "21px", borderRadius: "5px", margin: "10px", color: "white", padding: "5px", zIndex: 10000 }}>
           <a className="changed-atag" target="_blank" href="/privacy"><h2>Privacy Policy</h2></a></div>
-        <div style={{ position: "absolute", right: "30px", top: "21px", borderRadius: "5px", margin: "10px", color: "white", padding: "5px" }}>
+        <div style={{ position: "absolute", right: "30px", top: "21px", borderRadius: "5px", margin: "10px", color: "white", padding: "5px", zIndex: 10000 }}>
           <a  className="changed-atag" target="_blank" href="/terms"><h2>Terms and Services</h2></a></div>
         {this.state.gameStarted ?
-          <div onClick={this.quitGame} className="quitButton" style={{ position: "absolute", right: "0px", bottom: "0px", backgroundColor: "#00000052", borderRadius: "5px", margin: "10px", color: "white", padding: "5px" }}>
+          <div onClick={this.quitGame} className="quitButton" style={{ position: "absolute", right: "0px", bottom: "0px", backgroundColor: "#00000052", borderRadius: "5px", margin: "10px", color: "white", padding: "5px", zIndex: 10000 }}>
             Quit Game</div>
           : null}
+
       </div>
     );
   }

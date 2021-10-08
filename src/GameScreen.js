@@ -228,7 +228,7 @@ class GameScreen extends Component {
 
   render() {
     return (
-      <section id="phaser-parent">
+      <section id="phaser-parent" style={{ zIndex: 100000}}>
       </section>
     );
   }
