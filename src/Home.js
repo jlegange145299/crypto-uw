@@ -513,9 +513,14 @@ class Home extends Component {
     ]
     return (
       <div className="Home">
-        <video style={{ overflow: 'hidden'}} onEnded={() => this.setState({ ended: true })} autoPlay muted>
-        <source src={movie} type='video/mp4' className={this.state.ended ? 'ended' : ''}/>
-        </video>
+        {
+          !this.state.ended && (
+            <video style={{ overflow: 'hidden'}} onEnded={() => this.setState({ ended: true })} autoPlay muted>
+            <source src={movie} type='video/mp4' className={this.state.ended ? 'ended' : ''}/>
+            </video>
+          )
+        }
+
         {this.state.boomMsgList.length > 0 &&
           <div className='boom-message-list'>
             <div>
