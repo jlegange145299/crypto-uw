@@ -1,5 +1,12 @@
+html, body {margin: 0; height: 100%; overflow: hidden}
+
 .App {
   text-align: center;
+  max-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: "theBold";
+  overflow: hidden;
 }
 
 .App-logo {
@@ -47,15 +54,18 @@ p{
 }
 
 .Home{
-  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
   overflow: hidden;
-  font-family: "theBold"
+  font-family: "theBold";
+  overflow: hidden;
 }
 
 .Panel{
   position: absolute;
   width: 100%;
   color: white;
+  z-index: 100
 }
 
 .Panel h1{
@@ -64,6 +74,18 @@ p{
   margin-left: 30px;
   margin-top: 30px;
   margin-bottom: 200px;
+}
+
+video {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+.ended {
+  z-index: -1000;
 }
 
 .Login{
