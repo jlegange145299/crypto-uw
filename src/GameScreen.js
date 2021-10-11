@@ -33,15 +33,15 @@ class GameScreen extends Component {
   }
 
   preload() {
-    this.load.image('background', './phaser/Background.png');
+    this.load.image('background', './phaser/B9.png');
     //this.load.image('balloon', './phaser/Balloon Pop.png');
     this.load.spritesheet('balloon',
       './phaser/Balloon Pop.png',
       { frameWidth: 390, frameHeight: 481 }
     );
-    this.load.image('cloudBack', './phaser/Clouds_03_Back.png');
-    this.load.image('cloudMid', './phaser/Clouds_02_Middle.png');
-    this.load.image('cloudFront', './phaser/Clouds_01_Front.png');
+    //this.load.image('cloudBack', './phaser/Clouds_03_Back.png');
+    //this.load.image('cloudMid', './phaser/Clouds_02_Middle.png');
+    //this.load.image('cloudFront', './phaser/Clouds_01_Front.png');
   }
 
   create() {
@@ -52,20 +52,20 @@ class GameScreen extends Component {
     bg.displayHeight = window.innerHeight;
     bg.setOrigin(0, 0);
 
-    this.cloudBack = this.add.tileSprite(window.innerWidth / 2, window.innerHeight / 2, window.innerWidth, window.innerHeight, 'cloudBack');
-    this.cloudBack.setScale(1);
-    this.cloudBack.tileScaleX = 0.5;
-    this.cloudBack.tileScaleY = 0.6;
+    //this.cloudBack = this.add.tileSprite(window.innerWidth / 2, window.innerHeight / 2, window.innerWidth, window.innerHeight, 'cloudBack');
+    //this.cloudBack.setScale(1);
+    //this.cloudBack.tileScaleX = 0.5;
+    //this.cloudBack.tileScaleY = 0.6;
 
-    this.cloudMid = this.add.tileSprite(window.innerWidth / 2, window.innerHeight / 2, window.innerWidth, window.innerHeight, 'cloudMid');
-    this.cloudMid.setScale(1);
-    this.cloudMid.tileScaleX = 0.5;
-    this.cloudMid.tileScaleY = 0.6;
+    //this.cloudMid = this.add.tileSprite(window.innerWidth / 2, window.innerHeight / 2, window.innerWidth, window.innerHeight, 'cloudMid');
+    //this.cloudMid.setScale(1);
+    //this.cloudMid.tileScaleX = 0.5;
+    //this.cloudMid.tileScaleY = 0.6;
 
-    this.cloudFront = this.add.tileSprite(window.innerWidth / 2, window.innerHeight / 2, window.innerWidth, window.innerHeight, 'cloudFront');
-    this.cloudFront.setScale(1);
-    this.cloudFront.tileScaleX = 0.5;
-    this.cloudFront.tileScaleY = 0.6;
+    //this.cloudFront = this.add.tileSprite(window.innerWidth / 2, window.innerHeight / 2, window.innerWidth, window.innerHeight, 'cloudFront');
+    //this.cloudFront.setScale(1);
+    //this.cloudFront.tileScaleX = 0.5;
+    //this.cloudFront.tileScaleY = 0.6;
 
     this.anims.create({
       key: 'idle',
@@ -142,9 +142,9 @@ class GameScreen extends Component {
 
 
   update() {
-    this.cloudBack.tilePositionX -= 0.15;
-    this.cloudMid.tilePositionX += 0.3;
-    this.cloudFront.tilePositionX -= 0.75;
+    //this.cloudBack.tilePositionX -= 0.15;
+    //this.cloudMid.tilePositionX += 0.3;
+    //this.cloudFront.tilePositionX -= 0.75;
     if(balloons.length == balloonCount)
     {
       for (let i = 0; i < balloonCount; i++) {
