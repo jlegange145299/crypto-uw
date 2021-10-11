@@ -10,8 +10,9 @@ var schedule = require('node-schedule');
 var ethers = require('ethers');
 var web3 = new Web3(new Web3.providers.HttpProvider("https://data-seed-prebsc-1-s1.binance.org:8545"));
 //app.use(cors())
-//mongoose.connect('mongodb://localhost/BalloonDB');
-mongoose.connect('mongodb://192.168.3.118:27017/BalloonDB');
+mongoose.connect('mongodb://localhost/BalloonDB');
+//mongoose.connect('mongodb://192.168.3.118:27017/BalloonDB');
+//mongoose.connect('mongodb://127.0.0.1/BalloonDB');
 var activeList = [];
 var loginList = {};
 var popCount = 0;
